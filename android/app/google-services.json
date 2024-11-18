@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "insert your own",
+    "firebase_url": "insert your own",
+    "project_id": "insert your own",
+    "storage_bucket": "insert your own"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "insert your own",
+        "android_client_info": {
+          "package_name": "com.example.tab_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "insert your own"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
