@@ -28,42 +28,44 @@ class _TabOneState extends State<TabOne> {
         return Container(
           color: ColorUtils.getColorFromString(style.backgroundColor),
           constraints: const BoxConstraints(maxWidth: 500),
-          child: Column(
-            children: [
-              for (var component in components) ...[
-                if (component.type == ComponentType.text)
-                  Text(component.params.text!,
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                for (var component in components) ...[
+                  if (component.type == ComponentType.text)
+                    Text(component.params.text!,
+                        style: TextStyle(
+                            fontSize: component.params.size,
+                            color: ColorUtils.getColorFromString(
+                                component.params.color!))),
+                  if (component.type == ComponentType.margin)
+                    SizedBox(
+                      height: component.params.paddingH,
+                      width: component.params.paddingV,
+                    ),
+                  if (component.type == ComponentType.input)
+                    TextFormField(
+                      controller:
+                          TextEditingController(text: component.params.text),
                       style: TextStyle(
-                          fontSize: component.params.size,
                           color: ColorUtils.getColorFromString(
-                              component.params.color!))),
-                if (component.type == ComponentType.margin)
-                  SizedBox(
-                    height: component.params.paddingH,
-                    width: component.params.paddingV,
-                  ),
-                if (component.type == ComponentType.input)
-                  TextFormField(
-                    controller:
-                        TextEditingController(text: component.params.text),
-                    style: TextStyle(
-                        color: ColorUtils.getColorFromString(
-                            component.params.color!)),
-                    decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                            borderSide: BorderSide(
-                                color: ColorUtils.getColorFromString(
-                                    component.params.color!),
-                                width: 1))),
-                  ),
-                if (component.type == ComponentType.nextButton)
-                  MaterialButton(
-                    onPressed: () {},
-                    color: Color(int.parse(component.params.color!, radix: 16)),
-                    child: Text(component.params.text!),
-                  )
-              ]
-            ],
+                              component.params.color!)),
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: ColorUtils.getColorFromString(
+                                      component.params.color!),
+                                  width: 1))),
+                    ),
+                  if (component.type == ComponentType.nextButton)
+                    MaterialButton(
+                      onPressed: () {},
+                      color: Color(int.parse(component.params.color!, radix: 16)),
+                      child: Text(component.params.text!),
+                    )
+                ]
+              ],
+            ),
           ),
         );
       },

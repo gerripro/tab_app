@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:tab_app/models/style_dto.dart';
@@ -15,6 +16,7 @@ class TabScreen extends StatefulWidget {
 
 class _TabScreenState extends State<TabScreen> {
   late Future fetchTabWidgetsFuture;
+  final FirebaseDatabase database = FirebaseDatabase.instance;
 
   Future<StyleDto> _fetchTabWidgets() async {
     var widgetsJsonStr = await rootBundle.loadString('assets/screen_1.json');
@@ -41,7 +43,7 @@ class _TabScreenState extends State<TabScreen> {
           ),
           body: TabBarView(children: [
             TabOne(fetchFunction: fetchTabWidgetsFuture),
-            TabTwo(),
+            TabTwo(databaseReference: database.ref(),),
           ]),
         ));
   }
