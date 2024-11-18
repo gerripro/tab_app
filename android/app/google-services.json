@@ -1,14 +1,14 @@
 {
   "project_info": {
-    "project_number": "291450126431",
-    "firebase_url": "https://testassignment-9e8ee-default-rtdb.firebaseio.com",
-    "project_id": "testassignment-9e8ee",
-    "storage_bucket": "testassignment-9e8ee.firebasestorage.app"
+    "project_number": "insert your own",
+    "firebase_url": "insert your own",
+    "project_id": "insert your own",
+    "storage_bucket": "insert your own"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:291450126431:android:69a9ce0945f5e3139d5bea",
+        "mobilesdk_app_id": "insert your own",
         "android_client_info": {
           "package_name": "com.example.tab_app"
         }
@@ -16,7 +16,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBL83iyDAtbRQX_Iilq1zdUi4nYY52T50o"
+          "current_key": "insert your own"
         }
       ],
       "services": {
